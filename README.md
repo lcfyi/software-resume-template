@@ -2,8 +2,11 @@ This was adapted from the template [here](https://github.com/sb2nov/resume), wit
 
 # Usage
 
-There are 4 distinct components: sections, entry type 1 (title, subheading, date(s), location), entry type 2 (title, date(s)), and entry type 3 (single list no bullet, with a bold prefix). 
+There are 5 distinct components: header, sections, entry type 1 (title, subheading, date(s), location), entry type 2 (title, date(s)), and entry type 3 (single list no bullet, with a bold prefix). 
 
+# Header
+
+Change the variables at the top of the document, and then modify the way you want to present your info in the `\headertype{}{}{}{}{}{}` argument at the beginning of the document. You can choose `\doublecol` or `\singlecol`.
 
 # Section
 

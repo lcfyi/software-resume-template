@@ -18,22 +18,30 @@
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
 % Header settings
 \def \fullname {Dwight Schrute}
+\def \subtitle {}
 
+\def \linkedinicon {\faLinkedin}
 \def \linkedinlink {https://linkedin.com/in/dwight-schrute/}
-\def \linkedin {/dwight-schrute}
+\def \linkedintext {/dwight-schrute}
 
-\def \phonenumber {+1-123-456-7890}
+\def \phoneicon {\faPhone}
+\def \phonetext {+1-123-456-7890}
 
+\def \emailicon {\faEnvelope}
 \def \emaillink {mailto:dschrute@dundermifflin.com}
-\def \email {dschrute@dundermifflin.com}
+\def \emailtext {dschrute@dundermifflin.com}
 
+\def \githubicon {\faGithub}
 \def \githublink {https://github.com/dwight-schrute}
-\def \github {/dwight-schrute}
+\def \githubtext {/dwight-schrute}
 
+\def \websiteicon {\faGlobe}
 \def \websitelink {https://google.com/}
-\def \website {dwightschru.te}
+\def \websitetext {dwightschrute.com}
 
-\def \contactinfospacing {6.0cm}
+\def \headertype {\doublecol} % \singlecol or \doublecol
+
+% Misc settings
 \def \entryspacing {-0pt}
 
 \def \bulletstyle {\faAngleRight}
@@ -45,6 +53,13 @@
 \definecolor{links}{HTML}{01579B}
 
 %------------------------------------------------------------------------------------------------------------------- 
+
+% Defines to make listing easier
+\def \linkedin {\linkedinicon \hspace{3pt}\href{\linkedinlink}{\linkedintext}}
+\def \phone {\phoneicon \hspace{3pt}{ \phonetext}}
+\def \email {\emailicon \hspace{3pt}\href{\emaillink}{\emailtext}}
+\def \github {\githubicon \hspace{3pt}\href{\githublink}{\githubtext}}
+\def \website {\websiteicon \hspace{3pt}\href{\websitelink}{\websitetext}}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.55in}
@@ -112,27 +127,51 @@
   }
 }
 
+% Double column header
+\newcommand{\doublecol}[6]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    {
+      \begin{tabular}[c]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l@{\hspace{1.5em}}l}
+        {\small#4} & {\small#1} \\
+        {\small#5} & {\small#2} \\
+        {\small#6} & {\small#3}
+      \end{tabular}
+    }
+  \end{tabular*}
+}
 
+% Single column header
+\newcommand{\singlecol}[6]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    {
+      \begin{tabular}[b]{l}
+        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        {\textit{\subtitle}} % You could add a subtitle here
+      \end{tabular}
+    } & {
+      \begin{tabular}[c]{l}
+        {\small#1} \\
+        {\small#2} \\
+        {\small#3} \\
+        {\small#4} \\
+        {\small#5} \\
+        {\small#6}
+      \end{tabular}
+    }
+  \end{tabular*}
+}
 
 \begin{document}
-
-% Header here
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  {
-    \begin{tabular}[c]{l}
-      \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
-    \end{tabular}
-  } & {
-    \begin{tabular}[c]{p{\contactinfospacing}@{\extracolsep{\fill}}l}
-      {\small{\faEnvelope}\href{\emaillink}{{ \email}}} & {\small{\faLinkedin}\href{\linkedinlink}{{ \linkedin}}} \\
-      {\small{\faPhone}{{ \phonenumber}}} & {\small{\faGithub}\href{\githublink}{{ \github}}} \\
-      {} & {\small{\faGlobe}\href{\websitelink}{{ \website}}}
-    \end{tabular}
-  }
-\end{tabular*}
-
-\vspace{8pt}
 %-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%---------------------------------------------------- HEADER ----------------------------------------------------
+\headertype{\linkedin}{\github}{\website}{\phone}{\email}{}
+\vspace{-10pt} % Set a negative value to push the body up, and the opposite
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
 \section{\faGraduationCap}{Education}
