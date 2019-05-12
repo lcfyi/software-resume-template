@@ -6,7 +6,11 @@ There are 5 distinct components: header, sections, entry type 1 (title, subheadi
 
 # Header
 
-Change the variables at the top of the document, and then modify the way you want to present your info in the `\headertype{}{}{}{}{}{}` argument at the beginning of the document. You can choose `\doublecol` or `\singlecol`.
+Change the variables at the top of the document, and then modify the order you want to present your info in the `\headertype{}{}{}{}{}{}` argument at the beginning of the document. You can choose `\doublecol` or `\singlecol`. They look like this:
+
+![](/assets/header.jpg)
+
+Single column is probably better for longer links.
 
 # Section
 
