@@ -1,0 +1,228 @@
+%-------------------------------------
+% LaTeX Resume for Software Engineers
+% Author : Leslie Cheng
+% License : MIT
+%-------------------------------------
+
+\documentclass[letterpaper,12pt]{article}[leftmargin=*]
+
+\usepackage[empty]{fullpage}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fontawesome}
+\usepackage[sfdefault,light]{FiraSans}
+\usepackage[T1]{fontenc}
+\usepackage{anyfontsize}
+\usepackage{xcolor}
+
+%-------------------------------------------------- SETTINGS HERE --------------------------------------------------
+% Header settings
+\def \fullname {Dwight Schrute}
+
+\def \linkedinlink {https://linkedin.com/in/dwight-schrute/}
+\def \linkedin {/dwight-schrute}
+
+\def \phonenumber {+1-123-456-7890}
+
+\def \emaillink {mailto:dschrute@dundermifflin.com}
+\def \email {dschrute@dundermifflin.com}
+
+\def \githublink {https://github.com/dwight-schrute}
+\def \github {/dwight-schrute}
+
+\def \websitelink {https://google.com/}
+\def \website {dwightschru.te}
+
+\def \contactinfospacing {6.0cm}
+\def \entryspacing {-0pt}
+
+\def \bulletstyle {\faAngleRight}
+
+% Define colours
+\definecolor{primary}{HTML}{000000}
+\definecolor{secondary}{HTML}{311B92}
+\definecolor{accent}{HTML}{546E7A}
+\definecolor{links}{HTML}{01579B}
+
+%------------------------------------------------------------------------------------------------------------------- 
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.55in}
+\addtolength{\evensidemargin}{-0.55in}
+\addtolength{\textwidth}{1.1in}
+\addtolength{\topmargin}{-0.6in}
+\addtolength{\textheight}{1.1in}
+
+% Define the link colours
+\hypersetup{
+    colorlinks=true,
+    urlcolor=links,
+}
+
+% Set the margin alignment 
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%-------------------------
+% Custom commands
+
+% Sections
+\renewcommand{\section}[2]{\vspace{5pt}
+  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+}
+
+% Entry start and end, for spacing
+\newcommand{\resumeEntryStart}{\begin{itemize}[leftmargin=2.5mm]}
+\newcommand{\resumeEntryEnd}{\end{itemize}\vspace{\entryspacing}}
+
+% Itemized list for the bullet points under an entry, if necessary
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% Resume item
+\renewcommand{\labelitemii}{\bulletstyle}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+% Entry with title, subheading, date(s), and location
+\newcommand{\resumeEntryTSDL}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{\color{primary}#1} & \textit{\color{accent}\small#2} \\
+      \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+% Entry with title and date(s)
+\newcommand{\resumeEntryTD}[2]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{\color{primary}#1} & \textit{\color{accent}\small#2} \\
+    \end{tabular*}\vspace{-6pt}
+}
+
+% Entry for special (skills)
+\newcommand{\resumeEntryS}[2]{
+  \item[]\small{
+    \textbf{\color{primary}#1 }{ #2 \vspace{-6pt}}
+  }
+}
+
+
+
+\begin{document}
+
+% Header here
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  {
+    \begin{tabular}[c]{l}
+      \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+    \end{tabular}
+  } & {
+    \begin{tabular}[c]{p{\contactinfospacing}@{\extracolsep{\fill}}l}
+      {\small{\faEnvelope}\href{\emaillink}{{ \email}}} & {\small{\faLinkedin}\href{\linkedinlink}{{ \linkedin}}} \\
+      {\small{\faPhone}{{ \phonenumber}}} & {\small{\faGithub}\href{\githublink}{{ \github}}} \\
+      {} & {\small{\faGlobe}\href{\websitelink}{{ \website}}}
+    \end{tabular}
+  }
+\end{tabular*}
+
+\vspace{8pt}
+%-------------------------------------------------- BEGIN HERE --------------------------------------------------
+
+%-------------------------------------------------- EDUCATION --------------------------------------------------
+\section{\faGraduationCap}{Education}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Scranton University}{1998 -- 1992}
+      {BA Business Administration}{Scranton, PA}
+  \resumeEntryEnd
+
+%-------------------------------------------------- EXPERIENCE --------------------------------------------------
+\section{\faPieChart}{Experience}
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Dunder Mifflin}{May 2013 -- Present}
+      {Regional Manager}{Scranton, PA}
+    \resumeItemListStart
+      \resumeItem {Maintained the highest sales average, despite the weak economy and obsolete product}
+      \resumeItem {Managed, inspired, and protected the Scranton branch from criminals and raccoons}
+      \resumeItem {Led the office to obtain immeasurable success and glory}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Dunder Mifflin}{Mar. 2008 -- Mar. 2013}
+      {Assistant (to the) Regional Manager}{Scranton, PA}
+    \resumeItemListStart
+      \resumeItem {Closed more sales with revenues totalling more profit than any other employee}
+      \resumeItem {Served as self-appointed enforcer of The Rules (policies and procedures manual)}
+      \resumeItem {Instituted "Schrute Bucks" reward system, immeasurably raising office morale}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Staples}{Mar. 2008 -- Mar. 2008}
+      {Sales Associate}{Scranton, PA}
+    \resumeItemListStart
+        \resumeItem {Became the top salesman of the store within a one-month timespan}
+        \resumeItem {Made a record-high sales figure despite having an unfunny boss}
+        \resumeItem {Provided extraordinary and exceptional customer service to the masses}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTSDL
+      {Dunder Mifflin}{Mar. 2005 -- Mar. 2008}
+      {Assistant (to the) Regional Manager}{Scranton, PA}
+    \resumeItemListStart
+      \resumeItem {Acted as Regional Manager's eyes, ears, and right hand, overseeing and reporting on employee conduct}
+      \resumeItem {Provided services to the office such as martial arts and surveillance}
+      \resumeItem {Introduced new linen paper lines into the market, often closing sight-unseen sales}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+
+%-------------------------------------------------- PROJECTS --------------------------------------------------
+\section{\faFlask}{Projects}
+
+  \resumeEntryStart
+    \resumeEntryTD
+      {Schrute Farms (Bed and Breakfast)}{}
+    \resumeItemListStart
+      \resumeItem {A beautiful resort that provides fun activites like tablemaking and mattress making.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTD
+      {Dwight Schrute's Gym for Muscles}{}
+    \resumeItemListStart
+      \resumeItem {A built-in gym inside the Dunder Mifflin office complex that will buy your tin for 5 cents a yard.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+  \resumeEntryStart
+    \resumeEntryTD
+      {Sesame Avenue Daycare Center for Infants and Toddlers}{}
+    \resumeItemListStart
+      \resumeItem {A great daycare for infants with a focus on cognitive development.}
+    \resumeItemListEnd
+  \resumeEntryEnd
+
+%-------------------------------------------------- PROGRAMMING SKILLS --------------------------------------------------
+\section{\faGears}{Skills}
+ \resumeEntryStart
+  \resumeEntryS{Traits } {Hardworking, Alpha Male, Jackhammer, Merciless, Insatiable}
+  \resumeEntryS{Talents } {Karate (Black Belt), Jujitsu, Werewolf Hunting, Table Making}
+ \resumeEntryEnd
+
+\end{document}
