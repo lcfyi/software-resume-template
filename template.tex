@@ -22,10 +22,14 @@
 \usepackage{anyfontsize}
 \usepackage{xcolor}
 \usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{array}
 
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
 % Header settings
 \def \fullname {Dwight Schrute}
+\def \photoavatar {\roundpic{1.8cm}{assets/Dwight_Schrute.jpg}} % \roundpic{size}{file location} or \none
 \def \subtitle {}
 
 \def \linkedinicon {\faLinkedin}
@@ -47,7 +51,7 @@
 \def \websitelink {https://google.com/}
 \def \websitetext {dwightschrute.com}
 
-\def \headertype {\doublecol} % \singlecol or \doublecol
+\def \headertype {\singlecol} % \singlecol or \doublecol
 
 % Misc settings
 \def \entryspacing {-0pt}
@@ -102,6 +106,21 @@
 % Itemized list for the bullet points under an entry, if necessary
 \newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=4.5mm]}
 \newcommand{\resumeItemListEnd}{\end{itemize}}
+
+% For our photo avatar
+\newcommand{\roundpic}[2]{
+  \begin{tabular}{m{#1} r}
+    \hspace{-23pt}{
+    \tikz\node [circle, minimum width = #1,
+      path picture = {
+        \node [xshift=0cm,yshift=0cm] at (path picture bounding box.center) {
+          \includegraphics[width=#1]{#2}};
+    }] {};} & \vspace{-30pt}\textbf{\fullname}
+  \end{tabular}
+}
+\newcommand{\none}{
+  \hspace{-23pt}\textbf{\fullname}
+}
 
 % Resume item
 \renewcommand{\labelitemii}{\bulletstyle}
@@ -158,7 +177,11 @@
   \begin{tabularx}{\textwidth}{Xr}
     {
       \begin{tabular}[b]{l}
-        \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        % \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
+        % {\textit{\subtitle}} % You could add a subtitle here
+        \fontsize{35}{45}\selectfont{\color{primary}{
+            \photoavatar
+        }} \\
         {\textit{\subtitle}} % You could add a subtitle here
       \end{tabular}
     } & {
