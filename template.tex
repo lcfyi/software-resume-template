@@ -8,10 +8,17 @@
 
 \usepackage[empty]{fullpage}
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage[xetex]{hyperref}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[pdftex]{hyperref}
+\fi
 \usepackage{fontawesome}
 \usepackage[sfdefault,light]{FiraSans}
-\usepackage[T1]{fontenc}
 \usepackage{anyfontsize}
 \usepackage{xcolor}
 
