@@ -21,6 +21,7 @@
 \usepackage[sfdefault,light]{FiraSans}
 \usepackage{anyfontsize}
 \usepackage{xcolor}
+\usepackage{tabularx}
 
 %-------------------------------------------------- SETTINGS HERE --------------------------------------------------
 % Header settings
@@ -113,18 +114,18 @@
 % Entry with title, subheading, date(s), and location
 \newcommand{\resumeEntryTSDL}[4]{
   \vspace{-1pt}\item[]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
       \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
       \textit{\color{accent}\small#3} & \textit{\color{accent}\small#4} \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabularx}\vspace{-6pt}
 }
 
 % Entry with title and date(s)
 \newcommand{\resumeEntryTD}[2]{
   \vspace{-1pt}\item[]
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabularx}{0.97\textwidth}{X@{\hspace{60pt}}r}
       \textbf{\color{primary}#1} & {\firabook\color{accent}\small#2} \\
-    \end{tabular*}\vspace{-6pt}
+    \end{tabularx}\vspace{-6pt}
 }
 
 % Entry for special (skills)
@@ -136,7 +137,7 @@
 
 % Double column header
 \newcommand{\doublecol}[6]{
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \begin{tabularx}{\textwidth}{Xr}
     {
       \begin{tabular}[c]{l}
         \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
@@ -149,12 +150,12 @@
         {\small#6} & {\small#3}
       \end{tabular}
     }
-  \end{tabular*}
+  \end{tabularx}
 }
 
 % Single column header
 \newcommand{\singlecol}[6]{
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \begin{tabularx}{\textwidth}{Xr}
     {
       \begin{tabular}[b]{l}
         \fontsize{35}{45}\selectfont{\color{primary}{{\textbf{\fullname}}}} \\
@@ -170,7 +171,7 @@
         {\small#6}
       \end{tabular}
     }
-  \end{tabular*}
+  \end{tabularx}
 }
 
 \begin{document}
