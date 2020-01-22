@@ -91,8 +91,8 @@
 % Custom commands
 
 % Sections
-\renewcommand{\section}[2]{\vspace{5pt}
-  \colorbox{secondary}{\color{white}\raggedbottom\normalsize\textbf{{#1}{\hspace{7pt}#2}}}
+\renewcommand{\section}[1]{
+  {\color{secondary}\raggedbottom\normalsize\textsc{\textbf{#1}}\dotfill}
 }
 
 % Entry start and end, for spacing
@@ -183,7 +183,7 @@
 \vspace{-10pt} % Set a negative value to push the body up, and the opposite
 
 %-------------------------------------------------- EDUCATION --------------------------------------------------
-\section{\faGraduationCap}{Education}
+\section{Education}
 
   \resumeEntryStart
     \resumeEntryTSDL
@@ -192,7 +192,7 @@
   \resumeEntryEnd
 
 %-------------------------------------------------- EXPERIENCE --------------------------------------------------
-\section{\faPieChart}{Experience}
+\section{Experience}
 
   \resumeEntryStart
     \resumeEntryTSDL
@@ -240,7 +240,7 @@
 
 
 %-------------------------------------------------- PROJECTS --------------------------------------------------
-\section{\faFlask}{Projects}
+\section{Projects}
 
   \resumeEntryStart
     \resumeEntryTD
@@ -267,7 +267,7 @@
   \resumeEntryEnd
 
 %-------------------------------------------------- PROGRAMMING SKILLS --------------------------------------------------
-\section{\faGears}{Skills}
+\section{Skills}
  \resumeEntryStart
   \resumeEntryS{Traits } {Hardworking, Alpha Male, Jackhammer, Merciless, Insatiable}
   \resumeEntryS{Talents } {Karate (Black Belt), Jujitsu, Werewolf Hunting, Table Making}
